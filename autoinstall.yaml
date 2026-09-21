@@ -18,7 +18,6 @@ autoinstall:
     username: harmony
     password: "$6$B.g4ap4wcNilEUYs$D8h5ybJs7ASSg8Sh9bjkkGitSlEPlwMYaEDB9tMDsoSsgTTqzBlxCNI0eWQN84ssHUA0f.NHFOdEf1ETQ2euy/"
 
-
   locale: en_US.UTF-8
   keyboard:
     layout: us
