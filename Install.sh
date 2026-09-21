@@ -30,15 +30,14 @@ sleep 1
 wget -P /tmp https://github.com/soundshow-app/soundshow-downloads/releases/download/v2026.05.06/SoundShow-linux-x64.zip
 unzip /tmp/SoundShow-linux-x64.zip -d /opt
 chmod +x /opt/SoundShow/SoundShow.x86_64
-wget -P ~/Pictures https://images.seeklogo.com/logo-png/65/1/canva-logo-png_seeklogo-653227.png
-# placeholder icon for soundshow
-wget -P ~/Pictures https://images.seeklogo.com/logo-png/28/1/instagram-new-2016-logo-png_seeklogo-282177.png
+wget -P /usr/share/icons/ https://images.seeklogo.com/logo-png/65/1/canva-logo-png_seeklogo-653227.png
+wget -P /usr/share/icons/ https://raw.githubusercontent.com/iluvpidgeons/AutoinstallUbuntu/refs/heads/main/SoundShow.png
 
 CanvaDesktopFile="/usr/share/applications/canva.desktop"
 SoundShowDesktopFile="/usr/share/applications/soundshow.desktop"
 # find different directory for icons
-CanvaLogo="$HOME/Pictures/canva-logo-png_seeklogo-653227.png"
-SoundShowLogo="$HOME/Pictures/instagram-new-2016-logo-png_seeklogo-282177.png"
+CanvaLogo="/usr/share/icons/canva-logo-png_seeklogo-653227.png"
+SoundShowLogo="/usr/share/icons/SoundShow.png"
 
 cat > "$CanvaDesktopFile" <<EOF
 [Desktop Entry]
