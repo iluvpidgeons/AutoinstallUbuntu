@@ -1,5 +1,5 @@
 # Harmony Laptop Ubuntu Install Script
-Use the `Install.sh` bash script or `user-data` autoinstall file on a Ubuntu Laptop or Desktop
+Use the `Install.sh` bash script or `user-data` autoinstall file on a Ubuntu 26.04.1 Laptop or Desktop
 
 Installs
 * VLC
