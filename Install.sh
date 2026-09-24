@@ -24,7 +24,7 @@ sudo apt install -y \
     gimp
 
 echo
-echo "Installing Soundshow & Canva"
+echo "Installing SoundShow & Canva"
 sleep 1
 sudo wget -P /tmp https://github.com/soundshow-app/soundshow-downloads/releases/download/v2026.05.06/SoundShow-linux-x64.zip
 sudo unzip /tmp/SoundShow-linux-x64.zip -d /opt
@@ -32,38 +32,32 @@ sudo chmod +x /opt/SoundShow/SoundShow.x86_64
 sudo wget -P /usr/share/icons/ https://images.seeklogo.com/logo-png/65/1/canva-logo-png_seeklogo-653227.png
 sudo wget -P /usr/share/icons/ https://raw.githubusercontent.com/iluvpidgeons/AutoinstallUbuntu/refs/heads/main/SoundShow.png
 
-CanvaDesktopFile="/usr/share/applications/canva.desktop"
-SoundShowDesktopFile="/usr/share/applications/soundshow.desktop"
-CanvaLogo="/usr/share/icons/canva-logo-png_seeklogo-653227.png"
-SoundShowLogo="/usr/share/icons/SoundShow.png"
-SoundShowExec="/opt/SoundShow/SoundShow.x86_64"
-
-cat > "$CanvaDesktopFile" <<EOF
+sudo bash -c 'cat > /usr/share/applications/canva.desktop <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
 Name=Canva
 Comment=Open Canva in Firefox
-Exec=firefox --new-window https://www.canva.com/
-Icon=$CanvaLogo
+Exec=firefox --kiosk https://www.canva.com/
+Icon=/usr/share/icons/canva-logo-png_seeklogo-653227.png
 Terminal=false
 Categories=Office;
-EOF
+EOF'
 
-cat > "$SoundShowDesktopFile" <<EOF
+sudo bash -c 'cat > /usr/share/applications/soundshow.desktop <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
 Name=SoundShow
 Comment=Open SoundShow
-Exec=$SoundShowExec
-Icon=$SoundShowLogo
+Exec=/opt/SoundShow/SoundShow.x86_64
+Icon=/usr/share/icons/SoundShow.png
 Terminal=false
 Categories=Audio;
-EOF
+EOF'
 
-chmod +x $CanvaDesktopFile
-chmod +x $SoundShowDesktopFile
+sudo chmod +x /usr/share/applications/canva.desktop
+sudo chmod +x /usr/share/applications/soundshow.desktop
 
 gsettings set org.gnome.shell favorite-apps \
 "[
