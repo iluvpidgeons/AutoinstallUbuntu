@@ -9,7 +9,7 @@ autoinstall:
   
   storage:
     layout:
-      name:dirent
+      name: direct
 
   search_drivers: true
   drivers:
